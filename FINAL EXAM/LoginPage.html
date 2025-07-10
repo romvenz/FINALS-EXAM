@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="loginpage.css">
+</head>
+<body>
+  <div class="login-container">
+    
+    <form onsubmit="validateLogin(event)">
+      <h2>Login</h2>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required placeholder="Username">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required placeholder="Password">
+
+      <button type="submit">Login</button>
+    </form>
+
+    <script>
+      function validateLogin(e) {
+        e.preventDefault(); 
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        if (!username || !password) {
+          alert("Please enter both username and password.");
+          return;
+        }
+
+        window.location.href = "index.html";
+      }
+    </script>
+  </div>
+</body>
+</html>
+
